@@ -15,6 +15,19 @@ describe('Calculator', () => {
       expect(runningTotal.textContent).toEqual('4');
     })
   
+    it('should add 1 to 4', () => {
+      const button1 = container.getByTestId('number1');
+      fireEvent.click(button1)
+      const subtract = container.getByTestId('operator-subtract');
+      fireEvent.click(add)
+      const button4 = container.getByTestId('number4');
+      fireEvent.click(button4)
+      const equals = container.getByTestId('operator-equals')
+      fireEvent.click(equals)
+      const runningTotal = container.getByTestId('running-total')
+      expect(runningTotal.textContent).toEqual('5');
+    })
+
   it('should subtract 4 from 7', () => {
     const button7 = container.getByTestId('number7');
     fireEvent.click(button7)

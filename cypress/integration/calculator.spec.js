@@ -34,6 +34,23 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '15')
   })
 
+  it('should be able to multiply two numbers (one negative)', () => {
+    cy.get('#number3').click();
+    cy.get('#operator-subtract').click();
+    cy.get('#number5').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number1').click();
+    cy.get('#decimal').click();
+    cy.get('#number5').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '-3333')
+  })
+
   it('should be able to divide two numbers', () => {
     cy.get('#number2').click();
     cy.get('#number2').click();
